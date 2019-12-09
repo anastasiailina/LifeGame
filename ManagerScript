@@ -10,6 +10,43 @@ mass1 = [[0 for j in range(m)] for i in range(n)]
 mass2 = [[0 for j in range(m)] for j in range(m)]
 
 #ifTime =1
+
+#menu
+from tkinter import *
+root = Tk()
+#commands нужно добавить другие
+def hello():
+    print = "hello"
+
+
+menubar = Menu(root)
+
+#General
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Open", command=hello)
+filemenu.add_command(label="Save", command=hello)
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=root.quit)
+menubar.add_cascade(label="File", menu=filemenu)
+#lifeScale
+editmenu = Menu(menubar, tearoff=0)
+editmenu.add_command(label="3", command=hello)
+editmenu.add_command(label="4", command=hello)
+editmenu.add_command(label="5", command=hello)
+menubar.add_cascade(label="lifeScale", menu=editmenu)
+#lifeSpeed
+editmenu = Menu(menubar, tearoff=0)
+editmenu.add_command(label="1", command=hello)
+editmenu.add_command(label="2", command=hello)
+editmenu.add_command(label="3", command=hello)
+menubar.add_cascade(label="lifeSpeed", menu=editmenu)
+
+# display the menu
+root.config(menu=menubar)
+root.mainloop()
+
+
+
 def Start():
     global root,lifeScale,lifeSpeed,ifTime,generationCounter
     root = tk.Tk()
